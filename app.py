@@ -1,79 +1,75 @@
 import streamlit as st
 
-# Set page configuration
-st.set_page_config(page_title="AI Universe", layout="wide")
+# Set page config
+st.set_page_config(
+    page_title="AI Universe Game",
+    page_icon="🤖",
+    layout="wide"
+)
 
-# Custom CSS for Claymation Style
+# Inject custom CSS for claymation theme
 st.markdown("""
     <style>
-        body {
-            background: linear-gradient(145deg, #e0aaff, #ffbdbd);
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            overflow: hidden;
-        }
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .title {
-            font-size: 4rem;
-            color: #ff4500;
-            text-shadow: 3px 3px 0px #ffeb99, -3px -3px 0px #ffeb99;
-            transform: rotate(-1deg);
-            display: inline-block;
-            font-weight: bold;
-        }
-        .subtitle {
-            font-size: 1.5rem;
-            color: #4d4d4d;
-            margin-top: 10px;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .clay-button {
-            background: #ff5733;
-            color: white;
-            font-size: 1.2rem;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 15px;
-            box-shadow: 5px 5px 0px #d94a27, -5px -5px 0px #ff725e;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        }
-        .clay-button:hover {
-            transform: scale(1.1);
-            box-shadow: 7px 7px 0px #d94a27, -7px -7px 0px #ff725e;
-        }
-        .footer {
-            margin-top: 50px;
-            font-size: 1rem;
-            color: #8d8d8d;
-        }
+    body {
+        background: url('https://example.com/clay-texture.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        color: #333;
+    }
+    .block-container {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    }
+    h1, h2, h3 {
+        color: #e85d04;
+        text-shadow: 2px 2px #000000;
+    }
+    .stButton button {
+        background-color: #f4a261;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 12px;
+        padding: 10px 20px;
+        border: 3px solid #333;
+        box-shadow: 4px 4px 0px #000;
+    }
+    .stButton button:hover {
+        background-color: #e85d04;
+        transform: translateY(-2px);
+        box-shadow: 6px 6px 0px #000;
+    }
+    .clay-avatar {
+        border-radius: 50%;
+        border: 5px solid #333;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+    }
     </style>
 """, unsafe_allow_html=True)
 
-# Main Container
-st.markdown("""
-    <div class="container">
-        <div class="header">
-            <h1 class="title">AI Universe</h1>
-            <p class="subtitle">Create, evolve, and explore your AI in a handcrafted cosmos!</p>
-        </div>
-        <div class="button-container">
-            <button class="clay-button" onclick="startGame()">Start Game</button>
-            <button class="clay-button" onclick="aboutPage()">About</button>
-            <button class="clay-button" onclick="universeMap()">Universe Map</button>
-        </div>
-        <div class="footer">
-            <p>A world crafted by you. Let the adventure begin!</p>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
+# Homepage Content
+st.title("🌟 Welcome to the AI Universe Game! 🌟")
+st.header("Explore a Vibrant World of AI Creations")
+st.write("Step into a universe of handcrafted AIs, where creativity meets endless possibilities.")
 
-# Placeholder Functions (Streamlit doesn't support direct JavaScript events)
-st.write("🚀 **Coming Soon:** Fully interactive universe exploration!")
+# Claymation-style avatar or character
+st.image(
+    "https://example.com/clay-avatar.jpg",
+    width=200,
+    caption="Your AI Guide",
+    use_column_width="always",
+    output_format="auto"
+)
+
+# Interactive Buttons
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.button("🌌 Enter the Universe")
+with col2:
+    st.button("🛠 Customize Your AI")
+with col3:
+    st.button("📖 Learn More")
+
+# Footer
+st.write("🎨 *Crafted with love to bring a claymation feel to AI exploration.*")
